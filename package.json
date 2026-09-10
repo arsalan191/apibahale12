@@ -1,9 +1,16 @@
-{
-  "name": "firegame-api",
-  "version": "1.0.0",
-  "description": "FIREGAME SMP API",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  }
-}
+const http = require("http");
+
+const port = process.env.PORT || 10000;
+
+const server = http.createServer((req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  res.end(JSON.stringify({
+    server: "FIREGAME SMP",
+    status: "online",
+    kills: []
+  }));
+});
+
+server.listen(port, "0.0.0.0", () => {
+  console.log(`FIREGAME API running on port ${port}`);
+});
