@@ -1,0 +1,9 @@
+{
+  "name": "firegame-api",
+  "version": "1.0.0",
+  "description": "FIREGAME SMP API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
