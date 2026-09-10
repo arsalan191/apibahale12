@@ -1,7 +1,10 @@
 const http = require("http");
 
+const port = process.env.PORT || 10000;
+
 const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "application/json");
+
   res.end(JSON.stringify({
     server: "FIREGAME SMP",
     status: "online",
@@ -9,4 +12,6 @@ const server = http.createServer((req, res) => {
   }));
 });
 
-server.listen(process.env.PORT || 3000);
+server.listen(port, "0.0.0.0", () => {
+  console.log(`FIREGAME API running on port ${port}`);
+});
